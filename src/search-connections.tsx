@@ -123,15 +123,17 @@ export default function Command() {
         </List.Dropdown>
       }
     >
-      <List.EmptyView
-        icon={Icon.Monitor}
-        title="No connections found"
-        actions={
-          <ActionPanel>
-            <Action title="Open 1Remote" icon={Icon.AppWindow} onAction={() => activate1Remote()} />
-          </ActionPanel>
-        }
-      />
+      {!isLoading && (
+        <List.EmptyView
+          icon={Icon.Monitor}
+          title="No connections found"
+          actions={
+            <ActionPanel>
+              <Action title="Open 1Remote" icon={Icon.AppWindow} onAction={() => activate1Remote()} />
+            </ActionPanel>
+          }
+        />
+      )}
       {visible.map((connection) => {
         const iconPath = getIconPath(connection, environment.supportPath);
         return (

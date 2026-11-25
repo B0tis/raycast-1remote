@@ -35,7 +35,8 @@
       "title": "Database Path",
       "description": "Optional. Path to 1Remote.db. If empty, it is read from 1Remote.json (portable folder first, then %APPDATA%\\1Remote).",
       "type": "textfield",
-      "required": false
+      "required": false,
+      "placeholder": "C:UsersyouAppDataRoaming\u0001Remote\u0001Remote.db"
     },
     {
       "name": "showNoteDetail",
@@ -63,6 +64,14 @@
     "build": "ray build",
     "dev": "ray develop",
     "fix-lint": "ray lint --fix",
-    "lint": "ray lint"
-  }
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish"
+  },
+  "keywords": [
+    "rdp",
+    "ssh",
+    "vnc",
+    "remote desktop",
+    "1remote"
+  ]
 }

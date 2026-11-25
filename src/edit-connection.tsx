@@ -85,11 +85,11 @@ export default function EditConnectionForm({ connection, onSaved }: Props) {
       }
     >
       <Form.Description title="Protocol" text={connection.protocol} />
-      <Form.TextField title="Name" {...itemProps.DisplayName} />
-      <Form.TextField title="Address" {...itemProps.Address} />
-      <Form.TextField title="Port" {...itemProps.Port} />
-      <Form.TextField title="User Name" {...itemProps.UserName} />
-      {hasDomain && <Form.TextField title="Domain" {...itemProps.Domain} />}
+      <Form.TextField title="Name" placeholder="Connection name" {...itemProps.DisplayName} />
+      <Form.TextField title="Address" placeholder="Host name or IP address" {...itemProps.Address} />
+      <Form.TextField title="Port" placeholder="3389" {...itemProps.Port} />
+      <Form.TextField title="User Name" placeholder="User name" {...itemProps.UserName} />
+      {hasDomain && <Form.TextField title="Domain" placeholder="Domain" {...itemProps.Domain} />}
       <Form.TextField title="Tags" placeholder="tag1, tag2" info="Comma-separated" {...itemProps.Tags} />
       <Form.TextArea title="Note" enableMarkdown {...itemProps.Note} />
       <Form.TextField title="Color" placeholder="#FF15C600" {...itemProps.ColorHex} />
@@ -124,7 +124,7 @@ export function DuplicateConnectionForm({ connection, onSaved }: Props) {
         </ActionPanel>
       }
     >
-      <Form.TextField title="New Name" {...itemProps.DisplayName} />
+      <Form.TextField title="New Name" placeholder="Connection name" {...itemProps.DisplayName} />
       <Form.Description text="All settings, including the saved password, are copied. Edit the copy afterwards to change the address." />
     </Form>
   );
